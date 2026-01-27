@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background-start: rgb(2, 2, 5);
+  --color-background-end: rgb(0, 0, 0);
+}
+
+@layer base {
+  body {
+    background-color: #020205;
+    color: white;
+    overflow-x: hidden;
+    /* Default cursor restored */
+  }
+}
+
+@layer components {
+  .glass-morphism {
+    @apply bg-white/5 backdrop-blur-lg border border-white/10;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500;
+  }
+
+  .glass {
+    @apply bg-white/5 backdrop-blur-md border border-white/10;
+  }
+}
+
+/* Kept the scanlines for your 404 page glitch effect */
+.scanlines {
+  position: relative;
+  overflow: hidden;
+}
+
+.scanlines::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%,
+    rgba(0, 0, 0, 0.25) 50%
+  ),
+  linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 0.06),
+    rgba(0, 255, 0, 0.02),
+    rgba(0, 0, 255, 0.06)
+  );
+  z-index: 20;
+  background-size: 100% 4px, 3px 100%;
+  pointer-events: none;
+}
