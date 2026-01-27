@@ -1,94 +1,105 @@
 "use client";
-import React, { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import React from "react";
+import { motion } from "framer-motion";
+import Image from "next/image";
 import MagneticButton from "./MagneticButton";
-import { ChevronRight, Cpu, Sparkles } from "lucide-react";
+import { Cpu, Sparkles, ChevronRight } from "lucide-react";
 
 export default function Hero() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  
-  // Parallax effect for the text as you scroll
-  const { scrollY } = useScroll();
-  const y1 = useTransform(scrollY, [0, 500], [0, 200]);
-  const opacity = useTransform(scrollY, [0, 300], [1, 0]);
+  const scrollToProjects = () => {
+    const element = document.getElementById("selected-works");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const techStack = ["Next.js", "React", "Automation", "Three.js", "Tailwind"];
 
   return (
-    <section 
-      ref={containerRef}
-      className="relative min-h-screen w-full flex items-center justify-center overflow-hidden py-20 px-4"
-    >
-      {/* Dynamic Background Spotlight */}
-      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-purple-600/20 blur-[120px] rounded-full" />
-        <div className="absolute top-1/4 left-1/4 w-[400px] h-[400px] bg-blue-600/10 blur-[100px] rounded-full" />
+    // Changed min-h-screen to h-screen and ensured overflow-hidden to prevent overlap
+    <section className="relative h-screen w-full flex items-center justify-center overflow-hidden px-12">
+      {/* Background Atmosphere */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[600px] h-[600px] bg-purple-600/10 blur-[140px] rounded-full" />
+        <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-cyan-600/10 blur-[140px] rounded-full" />
       </div>
 
-      <motion.div 
-        style={{ y: y1, opacity }}
-        className="relative z-10 max-w-7xl mx-auto text-center"
-      >
-        {/* Top Badge */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mb-8"
+      <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-4 items-center h-full">
+        
+        {/* LEFT CONTENT */}
+        <motion.div 
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-left"
         >
-          <Cpu size={14} className="text-purple-400" />
-          <span className="text-[10px] uppercase tracking-[0.3em] text-gray-400 font-bold">
-            Next-Gen Automation & Web
-          </span>
-          <Sparkles size={14} className="text-blue-400" />
-        </motion.div>
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mb-8">
+            <Cpu size={14} className="text-purple-400" />
+            <span className="text-[10px] uppercase tracking-[0.3em] text-gray-400 font-bold">System Architect</span>
+            <Sparkles size={14} className="text-cyan-400" />
+          </div>
 
-        {/* Main Heading */}
-        <div className="mb-8">
-          <motion.h1
-            initial={{ opacity: 0, filter: "blur(10px)", y: 20 }}
-            animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-4xl md:text-6xl lg:text-[10rem] font-black leading-[0.9] tracking-tighter"
-          >
+          <h1 className="text-6xl md:text-8xl lg:text-9xl font-black leading-[0.85] tracking-tighter mb-8">
             VICTORIA <br />
             <span className="text-gradient">OMONIGHO</span>
-          </motion.h1>
-        </div>
+          </h1>
 
-        {/* Description */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 0.5 }}
-          className="max-w-2xl mx-auto text-lg md:text-xl text-gray-400 mb-12 px-6"
-        >
-          Architecting high-performance digital systems where 
-          <span className="text-white font-bold"> Web Development</span> meets 
-          <span className="text-white font-bold"> Intelligent Automation</span>.
-        </motion.p>
+          <p className="text-gray-400 text-lg md:text-xl mb-12 max-w-xl leading-relaxed">
+            Bridging high-end design with <span className="text-white font-bold text-gradient">intelligent logic</span>. I build digital engines that scale.
+          </p>
 
-        {/* CTA Section */}
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5, delay: 0.8 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-6"
-        >
-          <MagneticButton>
-            <button className="group relative flex items-center gap-3 px-10 py-5 bg-white text-black font-black rounded-2xl transition-all hover:scale-105 active:scale-95">
-              EXPLORE MY CRAFT
-              <ChevronRight size={20} className="group-hover:translate-x-1 transition-transform" />
-            </button>
-          </MagneticButton>
+          <div className="flex flex-wrap gap-8 items-center">
+            <MagneticButton>
+              <button 
+                onClick={scrollToProjects}
+                className="group flex items-center gap-3 px-10 py-5 bg-white text-black font-black rounded-2xl hover:bg-purple-50 transition-all shadow-[0_0_20px_rgba(255,255,255,0.1)]"
+              >
+                EXPLORE MY CRAFT
+                <ChevronRight size={20} className="group-hover:translate-x-1 transition-transform" />
+              </button>
+            </MagneticButton>
 
-          <button className="text-xs font-bold tracking-[0.4em] uppercase text-gray-500 hover:text-white transition-colors">
-            Scroll to Discover
-          </button>
+            <div className="flex gap-4">
+              {techStack.map((tech) => (
+                <span key={tech} className="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-600 border-l border-white/10 pl-3">
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </div>
         </motion.div>
-      </motion.div>
 
-      {/* Background Decorative Grid */}
-      <div className="absolute inset-0 z-[-1] opacity-20 [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)]">
-        <div className="absolute inset-0 h-full w-full bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px]" />
+        {/* RIGHT CONTENT: Fixed to prevent spilling into Automation section */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95, filter: "blur(10px)" }}
+          animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
+          className="relative h-full flex items-end justify-center lg:justify-end pointer-events-none"
+        >
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-purple-500/5 blur-[100px] rounded-full" />
+          
+          <Image 
+            src="/me.png" 
+            alt="Victoria Omonigho" 
+            width={700} 
+            height={900} 
+            // Changed object-cover to object-contain and ensured it stays at the bottom
+            className="relative z-10 w-full h-auto max-h-[90vh] object-contain object-bottom drop-shadow-[0_0_50px_rgba(168,85,247,0.15)] grayscale-[15%] hover:grayscale-0 transition-all duration-1000"
+            priority
+          />
+
+          <motion.div 
+            animate={{ y: [0, -10, 0] }}
+            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute top-1/4 right-0 lg:-right-4 p-4 glass-morphism border border-white/10 rounded-2xl z-20 hidden md:block"
+          >
+            <div className="flex items-center gap-3">
+              <div className="h-2 w-2 rounded-full bg-green-500 animate-pulse" />
+              <span className="text-[9px] font-black uppercase tracking-widest text-white">Live System</span>
+            </div>
+          </motion.div>
+        </motion.div>
+
       </div>
     </section>
   );

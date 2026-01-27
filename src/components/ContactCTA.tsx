@@ -6,7 +6,7 @@ export default function ContactCTA() {
   return (
     <section className="py-40 px-6 text-center">
       <div className="glass-morphism p-20 rounded-[3rem] max-w-5xl mx-auto border border-purple-500/20 relative overflow-hidden">
-        <h2 className="text-4xl md:text-7xl font-bold mb-6 tracking-tighter text-white">Ready to Scale?</h2>
+        <h2 className="text-4xl md:text-7xl font-bold mb-6 tracking-tighter text-white">Ready to <span className="text-gradient">Scale</span>?</h2>
         <p className="text-gray-400 text-lg mb-10 max-w-xl mx-auto">
           Currently accepting new projects for 2026. Let's build something that works for you.
         </p>
