@@ -11,13 +11,13 @@ export default function Home() {
       <section className="snap-start h-screen w-full">
         <Hero />
       </section>
-      
-      <section className="snap-start min-h-screen w-full flex items-center justify-center bg-[#06060960]">
-        <Automation />
-      </section>
 
       <section className="snap-start min-h-screen w-full flex items-center justify-center">
         <WebEngineering />
+      </section>
+      
+      <section className="snap-start min-h-screen w-full flex items-center justify-center bg-[#06060960]">
+        <Automation />
       </section>      
       
       <section id="selected-works" className="snap-start min-h-screen w-full flex items-center justify-center bg-[#06060990]">

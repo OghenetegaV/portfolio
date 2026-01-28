@@ -43,7 +43,7 @@ const brandLogos = [
 
 export default function WebDevelopment() {
   return (
-    <section className="relative min-h-screen w-full flex flex-col justify-center overflow-hidden">
+    <section className="relative min-h-screen w-full flex flex-col justify-center overflow-hidden py-32">
       <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-12 items-center mb-24">
         
         {/* Left: Content */}
