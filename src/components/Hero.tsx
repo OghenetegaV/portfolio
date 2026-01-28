@@ -13,91 +13,81 @@ export default function Hero() {
     }
   };
 
-  const techStack = ["Next.js", "React", "Automation", "Three.js", "Tailwind"];
-
   return (
-    // Changed min-h-screen to h-screen and ensured overflow-hidden to prevent overlap
-    <section className="relative h-screen w-full flex items-center justify-center overflow-hidden px-12">
+    <section 
+      className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-[#050508]"
+      style={{
+        maskImage: 'linear-gradient(to bottom, black 85%, transparent 100%)',
+        WebkitMaskImage: 'linear-gradient(to bottom, black 85%, transparent 100%)',
+      }}
+    >
       {/* Background Atmosphere */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[600px] h-[600px] bg-purple-600/10 blur-[140px] rounded-full" />
-        <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-cyan-600/10 blur-[140px] rounded-full" />
+        <div className="absolute -bottom-24 right-1/4 w-[600px] h-[600px] bg-cyan-600/10 blur-[140px] rounded-full" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-4 items-center h-full">
+      <div className="relative z-10 w-full h-full flex flex-col lg:flex-row">
         
-        {/* LEFT CONTENT */}
+        {/* LEFT CONTENT - Centered on mobile, Left-aligned on desktop */}
         <motion.div 
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-left"
+          className="w-full lg:w-[55%] px-6 md:px-12 lg:pl-24 flex flex-col justify-center items-center lg:items-start text-center lg:text-left pt-20 lg:pt-0"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mb-8">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mb-8 w-fit">
             <Cpu size={14} className="text-purple-400" />
             <span className="text-[10px] uppercase tracking-[0.3em] text-gray-400 font-bold">System Architect</span>
             <Sparkles size={14} className="text-cyan-400" />
           </div>
 
-          <h1 className="text-6xl md:text-8xl lg:text-9xl font-black leading-[0.85] tracking-tighter mb-8">
+          <h1 className="text-5xl md:text-8xl lg:text-9xl font-black leading-[0.9] lg:leading-[0.85] tracking-tighter mb-8 text-white">
             VICTORIA <br />
             <span className="text-gradient">OMONIGHO</span>
           </h1>
 
-          <p className="text-gray-400 text-lg md:text-xl mb-12 max-w-xl leading-relaxed">
-            Bridging high-end design with <span className="text-white font-bold text-gradient">intelligent logic</span>. I build digital engines that scale.
-          </p>
-
-          <div className="flex flex-wrap gap-8 items-center">
-            <MagneticButton>
-              <button 
-                onClick={scrollToProjects}
-                className="group flex items-center gap-3 px-10 py-5 bg-white text-black font-black rounded-2xl hover:bg-purple-50 transition-all shadow-[0_0_20px_rgba(255,255,255,0.1)]"
-              >
-                EXPLORE MY CRAFT
-                <ChevronRight size={20} className="group-hover:translate-x-1 transition-transform" />
-              </button>
-            </MagneticButton>
-
-            <div className="flex gap-4">
-              {techStack.map((tech) => (
-                <span key={tech} className="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-600 border-l border-white/10 pl-3">
-                  {tech}
-                </span>
-              ))}
-            </div>
+          <div className="mb-12">
+            <h2 className="text-xl md:text-2xl font-bold text-gradient mb-2">
+              Web Developer & Automation Specialist
+            </h2>
+            <p className="text-gray-500 font-mono text-xs md:text-sm tracking-[0.2em] mb-4 uppercase">
+              Next.js • React • Tailwind
+            </p>
+            <p className="text-gray-400 text-lg md:text-xl leading-relaxed italic max-w-sm lg:max-w-none">
+              Scalable web apps. Efficient systems.
+            </p>
           </div>
+
+          <MagneticButton>
+            <button 
+              onClick={scrollToProjects}
+              className="group flex items-center gap-3 px-10 py-5 bg-white text-black font-black rounded-2xl hover:bg-purple-50 transition-all shadow-[0_0_20px_rgba(255,255,255,0.1)]"
+            >
+              EXPLORE MY CRAFT
+              <ChevronRight size={20} className="group-hover:translate-x-1 transition-transform" />
+            </button>
+          </MagneticButton>
         </motion.div>
 
-        {/* RIGHT CONTENT: Fixed to prevent spilling into Automation section */}
+        {/* RIGHT CONTENT - Anchored to the edge on desktop */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.95, filter: "blur(10px)" }}
-          animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1.2, ease: "easeOut" }}
-          className="relative h-full flex items-end justify-center lg:justify-end pointer-events-none"
+          className="relative w-full lg:w-[45%] h-[50vh] lg:h-screen flex items-end justify-center lg:justify-end"
         >
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-purple-500/5 blur-[100px] rounded-full" />
-          
-          <Image 
-            src="/me.png" 
-            alt="Victoria Omonigho" 
-            width={700} 
-            height={900} 
-            // Changed object-cover to object-contain and ensured it stays at the bottom
-            className="relative z-10 w-full h-auto max-h-[90vh] object-contain object-bottom drop-shadow-[0_0_50px_rgba(168,85,247,0.15)] grayscale-[15%] hover:grayscale-0 transition-all duration-1000"
-            priority
-          />
-
-          <motion.div 
-            animate={{ y: [0, -10, 0] }}
-            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute top-1/4 right-0 lg:-right-4 p-4 glass-morphism border border-white/10 rounded-2xl z-20 hidden md:block"
-          >
-            <div className="flex items-center gap-3">
-              <div className="h-2 w-2 rounded-full bg-green-500 animate-pulse" />
-              <span className="text-[9px] font-black uppercase tracking-widest text-white">Live System</span>
-            </div>
-          </motion.div>
+          <div className="relative w-full h-full lg:w-[120%] lg:h-[110%] lg:-mr-20 lg:-mb-10">
+            <Image 
+              src="/me.png" 
+              alt="Victoria Omonigho" 
+              fill
+              // object-contain for mobile to show all, object-right-bottom for desktop to anchor it
+              className="object-contain lg:object-cover lg:object-right-bottom grayscale"
+              priority
+            />
+            {/* Darkening Overlay
+            <div className="absolute inset-0 bg-black/20 z-10 pointer-events-none" /> */}
+          </div>
         </motion.div>
 
       </div>

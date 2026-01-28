@@ -2,6 +2,7 @@ import Hero from "../components/Hero";
 import Automation from "../components/Automation";
 import Projects from "../components/Projects";
 import ContactCTA from "../components/ContactCTA";
+import WebEngineering from "../components/WebDevelopment";
 
 export default function Home() {
   return (
@@ -11,11 +12,15 @@ export default function Home() {
         <Hero />
       </section>
       
-      <section className="snap-start min-h-screen w-full flex items-center justify-center bg-[#050508]">
+      <section className="snap-start min-h-screen w-full flex items-center justify-center bg-[#06060960]">
         <Automation />
       </section>
+
+      <section className="snap-start min-h-screen w-full flex items-center justify-center">
+        <WebEngineering />
+      </section>      
       
-      <section id="selected-works" className="snap-start min-h-screen w-full flex items-center justify-center">
+      <section id="selected-works" className="snap-start min-h-screen w-full flex items-center justify-center bg-[#06060990]">
         <Projects />
       </section>
       
