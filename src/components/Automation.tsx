@@ -31,7 +31,7 @@ export default function Automation() {
               <div className="p-3 bg-blue-500/10 rounded-xl"><Database className="text-blue-400" /></div>
               <div>
                 <h4 className="font-bold text-white uppercase tracking-wider text-sm">Database Maintenance</h4>
-                <p className="text-xs text-gray-500 mt-1">Specializing in Brilliant Directory & Wordpress ecosystems.</p>
+                <p className="text-xs text-gray-500 mt-1">Specializing in high-traffic ecosystems and complex directory structures.</p>
               </div>
             </div>
           </div>
