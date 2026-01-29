@@ -37,7 +37,7 @@ export default function Hero() {
         >
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mb-8 w-fit">
             <Cpu size={14} className="text-purple-400" />
-            <span className="text-[10px] uppercase tracking-[0.3em] text-gray-400 font-bold">System Architect</span>
+            <span className="text-[10px] uppercase tracking-[0.3em] text-gray-400 font-bold">Hi there! I'm</span>
             <Sparkles size={14} className="text-cyan-400" />
           </div>
 
