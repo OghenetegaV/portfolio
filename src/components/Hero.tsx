@@ -13,6 +13,24 @@ export default function Hero() {
     }
   };
 
+  const firstName = "VICTORIA".split("");
+  const lastName = "OMONIGHO".split("");
+
+  const containerVariants = {
+    initial: { opacity: 0 },
+    animate: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.05,
+      },
+    },
+  };
+
+  const letterVariants = {
+    initial: { opacity: 0, display: "none" },
+    animate: { opacity: 1, display: "inline-block" },
+  };
+
   return (
     <section 
       className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-[#050508]"
@@ -21,7 +39,6 @@ export default function Hero() {
         WebkitMaskImage: 'linear-gradient(to bottom, black 85%, transparent 100%)',
       }}
     >
-      {/* Background Atmosphere */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[600px] h-[600px] bg-purple-600/10 blur-[140px] rounded-full" />
         <div className="absolute -bottom-24 right-1/4 w-[600px] h-[600px] bg-cyan-600/10 blur-[140px] rounded-full" />
@@ -29,7 +46,6 @@ export default function Hero() {
 
       <div className="relative z-10 w-full h-full flex flex-col lg:flex-row">
         
-        {/* LEFT CONTENT - Centered on mobile, Left-aligned on desktop */}
         <motion.div 
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
@@ -41,10 +57,22 @@ export default function Hero() {
             <Sparkles size={14} className="text-cyan-400" />
           </div>
 
-          <h1 className="text-5xl md:text-8xl lg:text-9xl font-black leading-[0.9] lg:leading-[0.85] tracking-tighter mb-8 text-white">
-            VICTORIA <br />
-            <span className="text-gradient">OMONIGHO</span>
-          </h1>
+          <motion.h1 
+            variants={containerVariants}
+            initial="initial"
+            animate="animate"
+            className="text-5xl md:text-8xl lg:text-9xl font-black leading-[0.9] lg:leading-[0.85] tracking-tighter mb-8 text-white"
+          >
+            {firstName.map((char, i) => (
+              <motion.span key={i} variants={letterVariants}>{char}</motion.span>
+            ))}
+            <br />
+            <span className="text-gradient">
+              {lastName.map((char, i) => (
+                <motion.span key={i} variants={letterVariants}>{char}</motion.span>
+              ))}
+            </span>
+          </motion.h1>
 
           <div className="mb-12">
             <h2 className="text-xl md:text-2xl font-bold text-gradient mb-2">
@@ -69,7 +97,6 @@ export default function Hero() {
           </MagneticButton>
         </motion.div>
 
-        {/* RIGHT CONTENT - Anchored to the edge on desktop */}
         <motion.div
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
@@ -81,12 +108,9 @@ export default function Hero() {
               src="/me.png" 
               alt="Victoria Omonigho" 
               fill
-              // object-contain for mobile to show all, object-right-bottom for desktop to anchor it
               className="object-contain lg:object-cover lg:object-right-bottom grayscale"
               priority
             />
-            {/* Darkening Overlay
-            <div className="absolute inset-0 bg-black/20 z-10 pointer-events-none" /> */}
           </div>
         </motion.div>
 
