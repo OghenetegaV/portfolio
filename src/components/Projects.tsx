@@ -11,7 +11,7 @@ const projects = [
     image: "/siru.png",
     tech: ["Next.js", "Design", "Tailwind"],
     link: "https://www.sirudesign.co/",
-    github: "#"
+    github: "https://github.com/OghenetegaV/siru-design-backup"
   },
   {
     title: "Aurora Care",
@@ -19,7 +19,7 @@ const projects = [
     image: "/aurora.png",
     tech: ["React", "HealthTech", "Hardware"],
     link: "https://aurora-care.vercel.app/",
-    github: "#"
+    github: "https://github.com/OghenetegaV/siru-design-backup"
   },
   {
     title: "Microscope App",
@@ -27,7 +27,7 @@ const projects = [
     image: "/microscope.png",
     tech: ["Automation", "Visualization", "Data"],
     link: "https://microscope-app-green.vercel.app/",
-    github: "#"
+    github: "https://github.com/OghenetegaV/LittleLights-Jaundice-App"
   }
 ];
 

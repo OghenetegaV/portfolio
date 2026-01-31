@@ -4,13 +4,13 @@ import { Mail, Github, Twitter, Linkedin } from "lucide-react";
 import MagneticButton from "./MagneticButton";
 
 const socials = [
-  { icon: <Github size={20} />, link: "#", label: "Github" },
-  { icon: <Twitter size={20} />, link: "#", label: "X" },
-  { icon: <Linkedin size={20} />, link: "#", label: "LinkedIn" },
+  { icon: <Github size={20} />, link: "https://github.com/OghenetegaV", label: "Github" },
+  { icon: <Twitter size={20} />, link: "https://x.com/itsVictoria_dev", label: "X" },
+  { icon: <Linkedin size={20} />, link: "https://www.linkedin.com/in/victoria-omonigho-0066031ab/", label: "LinkedIn" },
 ];
 
 export default function ContactCTA() {
-  const email = "your.email@example.com"; // Replace with your actual email
+  const email = "omonighooghenetega16@gmail.com"; 
 
   return (
     <section className="py-40 px-6 text-center">

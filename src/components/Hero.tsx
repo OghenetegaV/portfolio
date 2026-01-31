@@ -61,7 +61,7 @@ export default function Hero() {
             variants={containerVariants}
             initial="initial"
             animate="animate"
-            className="text-5xl md:text-8xl lg:text-9xl font-black leading-[0.9] lg:leading-[0.85] tracking-tighter mb-8 text-white"
+            className="text-5xl md:text-8xl lg:text-8xl font-black leading-[0.9] lg:leading-[0.85] tracking-tighter mb-8 text-white"
           >
             {firstName.map((char, i) => (
               <motion.span key={i} variants={letterVariants}>{char}</motion.span>
