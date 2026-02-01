@@ -97,7 +97,7 @@ export default function Hero2() {
           >
              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mb-2 w-fit">
                 <Cpu size={12} className="text-purple-400" />
-                <span className="text-[12px] md:text-[10px] uppercase tracking-widest text-gray-400 font-bold whitespace-nowrap">System Architect</span>
+                <span className="text-[12px] md:text-[10px] uppercase tracking-widest text-gray-400 font-bold whitespace-nowrap">I am a</span>
              </div>
             <span className="text-white font-bold text-[22px] md:text-2xl uppercase tracking-tighter leading-tight">
               Web Developer & <br />
