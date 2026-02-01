@@ -76,10 +76,11 @@ export default function Navbar() {
               {/* Blinking Cursor that follows text flow */}
               <motion.span
                 animate={{ opacity: [1, 0] }}
-                transition={{ 
-                  duration: 0.8, 
-                  repeat: Infinity, 
-                  ease: "steps(1)" 
+                    transition={{
+                    duration: 0.8,
+                    repeat: Infinity,
+                    ease: "linear",
+                    repeatType: "reverse",
                 }}
                 className="ml-1 w-[2px] h-3 bg-purple-500"
               />
