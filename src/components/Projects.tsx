@@ -33,7 +33,7 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section id="selected-works" className="relative w-full py-32 px-6">
+    <section id="selected-works" className="relative w-full py-20 px-8">
       <div className="max-w-7xl mx-auto">
         
         <motion.div 

@@ -13,8 +13,8 @@ export default function ContactCTA() {
   const email = "omonighooghenetega16@gmail.com"; 
 
   return (
-    <section className="py-40 px-6 text-center">
-      <div className="glass-morphism p-12 md:p-20 rounded-[3rem] max-w-5xl mx-auto border border-purple-500/20 relative overflow-hidden">
+    <section className="py-20 px-8 text-center">
+      <div className="glass-morphism p-10 md:p-18 rounded-[3rem] max-w-5xl mx-auto border border-purple-500/20 relative overflow-hidden">
         
         {/* Decorative Background Glow */}
         <div className="absolute -top-24 -right-24 w-64 h-64 bg-purple-600/10 blur-[100px] rounded-full" />
@@ -25,7 +25,7 @@ export default function ContactCTA() {
         </h2>
         
         <p className="text-gray-400 text-lg mb-10 max-w-xl mx-auto relative z-10">
-          Currently accepting new projects for 2026. Let's build something that works for you.
+          Currently accepting new projects. Let's build something that works for you.
         </p>
         
         <div className="flex flex-col items-center gap-12 relative z-10">

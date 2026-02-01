@@ -43,7 +43,7 @@ const brandLogos = [
 
 export default function WebDevelopment() {
   return (
-    <section className="relative min-h-screen w-full flex flex-col justify-center overflow-hidden py-32">
+    <section className="relative min-h-screen w-full flex flex-col justify-center overflow-hidden py-20">
       <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-12 items-center mb-24">
         
         {/* Left: Content */}
@@ -100,7 +100,7 @@ export default function WebDevelopment() {
       </div>
 
 {/* Actual Logos Marquee - Full Color & Persistent Names */}
-      <div className="relative w-full py-12 border-y border-white/5 bg-white/[0.01] backdrop-blur-sm">
+      <div className="relative w-full py-10 mt-10 bg-white/[0.01] backdrop-blur-sm">
         <div className="flex w-[200%] animate-marquee">
           <div className="flex justify-around items-center w-full">
             {brandLogos.map((logo, i) => (

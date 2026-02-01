@@ -5,7 +5,7 @@ import Terminal from "./Terminal";
 
 export default function Automation() {
   return (
-    <section className="py-32 px-6">
+    <section className="py-20 px-6">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <motion.div
           initial={{ opacity: 0, x: -50 }}

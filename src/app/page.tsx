@@ -1,4 +1,7 @@
-import Hero from "../components/Hero";
+"use client";
+import React from "react";
+import Navbar from "../components/Navbar";
+import Hero2 from "../components/Hero2";
 import Automation from "../components/Automation";
 import Projects from "../components/Projects";
 import ContactCTA from "../components/ContactCTA";
@@ -6,27 +9,27 @@ import WebEngineering from "../components/WebDevelopment";
 
 export default function Home() {
   return (
-    // h-screen and overflow-y-auto are required for CSS snapping to work on the body
-    <main className="h-screen overflow-y-auto overflow-x-hidden snap-y snap-mandatory scroll-smooth">
-      <section className="snap-start h-screen w-full">
-        <Hero />
-      </section>
+    <main className="relative min-h-screen w-full overflow-x-hidden selection:bg-purple-500/30">
+      <Navbar />
+      <Hero2 />
 
-      <section className="snap-start min-h-screen w-full flex items-center justify-center">
-        <WebEngineering />
-      </section>
-      
-      <section className="snap-start min-h-screen w-full flex items-center justify-center bg-[#06060960]">
-        <Automation />
-      </section>      
-      
-      <section id="selected-works" className="snap-start min-h-screen w-full flex items-center justify-center bg-[#06060990]">
-        <Projects />
-      </section>
-      
-      <section className="snap-start h-screen w-full flex items-center justify-center">
-        <ContactCTA />
-      </section>
+      <div className="relative z-10 flex flex-col w-full">
+        <section id="services" className="w-full bg-transparent">
+          <WebEngineering />
+        </section>
+        
+        <section className="w-full bg-transparent">
+          <Automation />
+        </section>      
+        
+        <section id="selected-works" className="w-full bg-transparent">
+          <Projects />
+        </section>
+        
+        <section id="contact" className="w-full bg-transparent">
+          <ContactCTA />
+        </section>
+      </div>
     </main>
   );
 }
