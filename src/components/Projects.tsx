@@ -13,14 +13,14 @@ const projects = [
     link: "https://www.sirudesign.co/",
     github: "https://github.com/OghenetegaV/siru-design-backup"
   },
-  {
+  /*{
     title: "Aurora Care",
     description: "A specialized healthcare interface for fetal and maternal monitoring. Designed to link directly with hardware vitals for real-time safety tracking.",
     image: "/aurora.png",
     tech: ["React", "HealthTech", "Hardware"],
     link: "https://aurora-care.vercel.app/",
     github: "https://github.com/OghenetegaV/siru-design-backup"
-  },
+  },*/
   {
     title: "Microscope App",
     description: "An engineering tool built for my Civil Engineering final project. It enables precise measurement of structural cracks and records data over time to track growth or closure.",
